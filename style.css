@@ -402,9 +402,27 @@ footer {
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media(max-width: 768px){
-  nav { padding: 1rem 1.2rem; }
-  nav ul { gap: 0.8rem; }
-  nav ul a { font-size: 0.78rem; }
+  nav { 
+    padding: 1rem 1.2rem; 
+    flex-wrap: wrap; /* İçeriklerin alt satıra geçmesine izin verir */
+  }
+  
+  .nav-logo {
+    flex: 1; /* Logoyu sola sabitler ve yanındaki boşluğu doldurarak butonu en sağa iter */
+  }
+
+  nav ul { 
+    order: 3; /* Menü linklerini logonun ve butonun alt satırına alır */
+    width: 100%; /* Alt satırın tamamını kaplamasını sağlar */
+    margin-top: 1rem; 
+    justify-content: center;
+    flex-wrap: wrap; /* Çok dar ekranlarda linkler de sığmazsa alt alta geçerler */
+    gap: 0.8rem 1.2rem; /* Linkler arası boşluk */
+  }
+  
+  nav ul a { font-size: 0.85rem; }
+  
+  /* Aşağıdakiler zaten senin yazdığın kodlar, aynen kalsın: */
   #hero { gap: 2.5rem; text-align: center; justify-content: center; }
   .hero-btns { justify-content: center; }
   .hero-terminal { max-width: 100%; }
