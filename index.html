@@ -15,23 +15,24 @@
   <nav>
     <span class="nav-logo">&gt; semih.exe</span>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certs</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about"          data-i18n="nav_about">About</a></li>
+      <li><a href="#skills"         data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#projects"       data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#certifications" data-i18n="nav_certs">Certs</a></li>
+      <li><a href="#contact"        data-i18n="nav_contact">Contact</a></li>
     </ul>
+    <button id="lang-toggle" aria-label="Switch language">TR</button>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
     <div class="hero-content">
-      <p class="hero-tag">// Computer Engineering Student</p>
+      <p class="hero-tag" data-i18n="hero_tag">// Computer Engineering Student</p>
       <h1>Semih<br><span class="accent">Özdemir</span></h1>
-      <p class="hero-desc">Cybersecurity · Graphics Programming · Systems Development</p>
+      <p class="hero-desc" data-i18n="hero_desc">Cybersecurity · Graphics Programming · Systems Development</p>
       <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <a href="#projects" class="btn-primary" data-i18n="hero_btn1">View Projects</a>
+        <a href="#contact"  class="btn-outline"  data-i18n="hero_btn2">Get in Touch</a>
       </div>
     </div>
     <div class="hero-terminal">
@@ -53,18 +54,18 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
-      <h2 class="section-title"><span class="accent">//</span> About</h2>
+      <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_about">About</span></h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>Computer Engineering student with foundational knowledge of C/C++,C#, Bash and Python</p> 
-          <p>Actively developing skills in cybersecurity, network security, and game development. Passionate about exploring low-level system architecture, computer graphics, and automation.</p> 
-            <p>A motivated team player eager to gain hands-on experience and apply technical knowledge to real-world projects.</p>
+          <p data-i18n="about_p1">Computer Engineering student with foundational knowledge of C/C++, C#, Bash and Python.</p>
+          <p data-i18n="about_p2">Actively developing skills in cybersecurity, network security, and game development. Passionate about exploring low-level system architecture, computer graphics, and automation.</p>
+          <p data-i18n="about_p3">A motivated team player eager to gain hands-on experience and apply technical knowledge to real-world projects.</p>
         </div>
         <div class="about-stats">
-          <div class="stat"><span class="stat-num">3.48</span><span class="stat-label">GPA</span></div>
-          <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Projects</span></div>
-          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Certifications</span></div>
-          <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Coding</span></div>
+          <div class="stat"><span class="stat-num">3.48</span><span class="stat-label" data-i18n="stat_gpa">GPA</span></div>
+          <div class="stat"><span class="stat-num">5+</span><span class="stat-label"  data-i18n="stat_projects">Projects</span></div>
+          <div class="stat"><span class="stat-num">4</span><span class="stat-label"   data-i18n="stat_certs">Certifications</span></div>
+          <div class="stat"><span class="stat-num">3+</span><span class="stat-label"  data-i18n="stat_years">Years Coding</span></div>
         </div>
       </div>
     </div>
@@ -73,26 +74,26 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
-      <h2 class="section-title"><span class="accent">//</span> Skills</h2>
+      <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_skills">Skills</span></h2>
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-icon">⚙️</div>
-          <h3>Programming</h3>
+          <h3 data-i18n="skill1_title">Programming</h3>
           <p>C · C++ · Python · C# · Assembly (RISC-V) · Bash</p>
         </div>
         <div class="skill-card">
           <div class="skill-icon">🎮</div>
-          <h3>Graphics & Game Dev</h3>
+          <h3 data-i18n="skill2_title">Graphics & Game Dev</h3>
           <p>OpenGL 4.6 · Unity Engine · GLSL/HLSL Shaders · EnTT ECS</p>
         </div>
         <div class="skill-card">
           <div class="skill-icon">🔒</div>
-          <h3>Cybersecurity</h3>
-          <p>Network & Web Penetration Testing · API Security · Metasploit · WireShark · Burp Suite</p>
+          <h3 data-i18n="skill3_title">Cybersecurity</h3>
+          <p data-i18n="skill3_desc">Network & Web Penetration Testing · API Security · Metasploit · WireShark · Burp Suite</p>
         </div>
         <div class="skill-card">
           <div class="skill-icon">🛠️</div>
-          <h3>Tools & Platforms</h3>
+          <h3 data-i18n="skill4_title">Tools & Platforms</h3>
           <p>Git · GitHub · Linux (Debian/Ubuntu) · Docker</p>
         </div>
       </div>
@@ -102,46 +103,46 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-inner">
-      <h2 class="section-title"><span class="accent">//</span> Projects</h2>
+      <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_projects">Projects</span></h2>
       <div class="projects-grid">
 
         <div class="project-card">
           <div class="project-lang">C++</div>
           <h3>SamEngine</h3>
-          <p class="project-sub">OpenGL 4.6 3D Model Renderer</p>
-          <p>Real-time 3D renderer built from scratch in C++20. Features bindless textures, PBR material pipeline, UBO-based camera/lighting, Poisson disk shadow mapping, and a dockable ImGui editor.</p>
+          <p class="project-sub" data-i18n="proj1_sub">OpenGL 4.6 3D Model Renderer</p>
+          <p data-i18n="proj1_desc">Real-time 3D renderer built from scratch in C++20. Features bindless textures, PBR material pipeline, UBO-based camera/lighting, Poisson disk shadow mapping, and a dockable ImGui editor.</p>
           <div class="project-tags"><span>C++20</span><span>OpenGL 4.6</span><span>ImGui</span><span>Assimp</span></div>
         </div>
 
         <div class="project-card">
           <div class="project-lang">Python</div>
           <h3>Binary Analyzer</h3>
-          <p class="project-sub">Malware Analysis Framework</p>
-          <p>Static malware analysis tool for ELF and PE binaries. Parses binaries using LIEF, detects suspicious API calls and IOC indicators without execution.</p>
+          <p class="project-sub" data-i18n="proj2_sub">Malware Analysis Framework</p>
+          <p data-i18n="proj2_desc">Static malware analysis tool for ELF and PE binaries. Parses binaries using LIEF, detects suspicious API calls and IOC indicators without execution.</p>
           <div class="project-tags"><span>Python</span><span>LIEF</span><span>Malware Analysis</span></div>
         </div>
 
         <div class="project-card">
           <div class="project-lang">C</div>
           <h3>CVector.h</h3>
-          <p class="project-sub">Generic Dynamic Array for C</p>
-          <p>Generic dynamic array in C using macros, replicating core features of C++ std::vector with manual memory management and type safety.</p>
+          <p class="project-sub" data-i18n="proj3_sub">Generic Dynamic Array for C</p>
+          <p data-i18n="proj3_desc">Generic dynamic array in C using macros, replicating core features of C++ std::vector with manual memory management and type safety.</p>
           <div class="project-tags"><span>C</span><span>Macros</span><span>Data Structures</span></div>
         </div>
 
         <div class="project-card">
           <div class="project-lang">Python</div>
           <h3>adviceMePhone</h3>
-          <p class="project-sub">Hybrid AI Phone Recommendation</p>
-          <p>Web-based recommendation system using NLP. Implemented DistilBERT + TF-IDF hybrid model, prepared dataset and trained models in a 4-person team.</p>
+          <p class="project-sub" data-i18n="proj4_sub">Hybrid AI Phone Recommendation</p>
+          <p data-i18n="proj4_desc">Web-based recommendation system using NLP. Implemented DistilBERT + TF-IDF hybrid model, prepared dataset and trained models in a 4-person team.</p>
           <div class="project-tags"><span>Python</span><span>DistilBERT</span><span>NLP</span><span>TF-IDF</span></div>
         </div>
 
         <div class="project-card">
           <div class="project-lang">Python</div>
           <h3>HotDog or NotHotDog</h3>
-          <p class="project-sub">Web-Based Image Classification</p>
-          <p>Binary image classifier using transfer learning with fine-tuned MobileNetV2 model and FastAPI backend for inference.</p>
+          <p class="project-sub" data-i18n="proj5_sub">Web-Based Image Classification</p>
+          <p data-i18n="proj5_desc">Binary image classifier using transfer learning with fine-tuned MobileNetV2 model and FastAPI backend for inference.</p>
           <div class="project-tags"><span>Python</span><span>MobileNetV2</span><span>FastAPI</span><span>ML</span></div>
         </div>
 
@@ -152,34 +153,34 @@
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-inner">
-      <h2 class="section-title"><span class="accent">//</span> Certifications</h2>
+      <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_certs">Certs</span></h2>
       <div class="cert-list">
         <div class="cert-card">
           <div class="cert-badge">eJPT</div>
           <div>
-            <h4>Junior Penetration Tester</h4>
-            <p>INE Security · January 2026</p>
+            <h4 data-i18n="cert1_title">Junior Penetration Tester</h4>
+            <p>INE Security · <span data-i18n="cert1_date">January 2026</span></p>
           </div>
         </div>
         <div class="cert-card">
           <div class="cert-badge">CWSE</div>
           <div>
-            <h4>Certified Web Security Expert</h4>
-            <p>Hackviser · September 2025</p>
+            <h4 data-i18n="cert2_title">Certified Web Security Expert</h4>
+            <p>Hackviser · <span data-i18n="cert2_date">September 2025</span></p>
           </div>
         </div>
         <div class="cert-card">
           <div class="cert-badge">CAPT</div>
           <div>
-            <h4>Certified Associate Penetration Tester</h4>
-            <p>Hackviser · July 2025</p>
+            <h4 data-i18n="cert3_title">Certified Associate Penetration Tester</h4>
+            <p>Hackviser · <span data-i18n="cert3_date">July 2025</span></p>
           </div>
         </div>
         <div class="cert-card">
           <div class="cert-badge">API</div>
           <div>
-            <h4>API Penetration Testing</h4>
-            <p>APIsec University · July 2025</p>
+            <h4 data-i18n="cert4_title">API Penetration Testing</h4>
+            <p>APIsec University · <span data-i18n="cert4_date">July 2025</span></p>
           </div>
         </div>
       </div>
@@ -189,8 +190,8 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner contact-inner">
-      <h2 class="section-title"><span class="accent">//</span> Contact</h2>
-      <p class="contact-desc">Open to internships, collaborations, and interesting projects.</p>
+      <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_contact">Contact</span></h2>
+      <p class="contact-desc" data-i18n="contact_desc">Open to internships, collaborations, and interesting projects.</p>
       <div class="contact-links">
         <a href="mailto:semihozdmirr@gmail.com" class="contact-item">
           <span class="contact-icon">✉</span>
