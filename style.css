@@ -71,6 +71,21 @@ nav ul a {
 
 nav ul a:hover { color: var(--accent); }
 
+#lang-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 1rem;
+}
+#lang-toggle:hover { background: var(--accent); color: var(--bg); }
+
 /* ─── SECTIONS ──────────────────────────────────────────────── */
 section {
   position: relative;
