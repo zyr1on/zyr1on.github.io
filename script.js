@@ -81,7 +81,7 @@ const translations = {
 };
 
 /* ── Language ────────────────────────────────────────────────── */
-let currentLang = "en";
+let currentLang = "tr"; // "tr" , "en"
 
 function applyLang(lang) {
   const t = translations[lang];
