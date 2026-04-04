@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semih Özdemir — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
 
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">&gt; semih.exe</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-tag">// Computer Engineering Student</p>
+      <h1>Semih<br><span class="accent">Özdemir</span></h1>
+      <p class="hero-desc">Cybersecurity · Graphics Programming · Systems Development</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">~/semih</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$</span> whoami</p>
+        <p class="out">semih_ozdemir</p>
+        <p><span class="prompt">$</span> skills --list</p>
+        <p class="out">C/C++ · Python · OpenGL · Cybersecurity</p>
+        <p><span class="prompt">$</span> status</p>
+        <p class="out"><span class="blink-cursor">▋</span> <span id="typed-status"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="accent">//</span> About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Computer Engineering student at <strong>Uludağ University, Bursa</strong> (GPA: 3.48) with a strong foundation in C/C++ and Python.</p>
+          <p>Deeply interested in <strong>cybersecurity</strong>, <strong>low-level systems</strong>, <strong>computer graphics</strong>, and automation. I enjoy building things from scratch — whether it's a 3D renderer, a malware analyzer, or a neural network pipeline.</p>
+          <p>Previously contributed to the <strong>TALOS Autonomous Vehicle Team</strong> at Uludağ University, developing ROS-based architectures and PID controllers for vehicle simulations.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">3.48</span><span class="stat-label">GPA</span></div>
+          <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Projects</span></div>
+          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Certifications</span></div>
+          <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Coding</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="accent">//</span> Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h3>Programming</h3>
+          <p>C · C++ · Python · C# · Assembly (RISC-V) · Bash</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎮</div>
+          <h3>Graphics & Game Dev</h3>
+          <p>OpenGL 4.6 · Unity Engine · GLSL/HLSL Shaders · EnTT ECS</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔒</div>
+          <h3>Cybersecurity</h3>
+          <p>Network & Web Penetration Testing · API Security · Metasploit · WireShark · Burp Suite</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
+          <h3>Tools & Platforms</h3>
+          <p>Git · GitHub · Linux (Debian/Ubuntu) · Docker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="accent">//</span> Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-lang">C++</div>
+          <h3>SamEngine</h3>
+          <p class="project-sub">OpenGL 4.6 3D Model Renderer</p>
+          <p>Real-time 3D renderer built from scratch in C++20. Features bindless textures, PBR material pipeline, UBO-based camera/lighting, Poisson disk shadow mapping, and a dockable ImGui editor.</p>
+          <div class="project-tags"><span>C++20</span><span>OpenGL 4.6</span><span>ImGui</span><span>Assimp</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-lang">Python</div>
+          <h3>Binary Analyzer</h3>
+          <p class="project-sub">Malware Analysis Framework</p>
+          <p>Static malware analysis tool for ELF and PE binaries. Parses binaries using LIEF, detects suspicious API calls and IOC indicators without execution.</p>
+          <div class="project-tags"><span>Python</span><span>LIEF</span><span>Malware Analysis</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-lang">C</div>
+          <h3>CVector.h</h3>
+          <p class="project-sub">Generic Dynamic Array for C</p>
+          <p>Generic dynamic array in C using macros, replicating core features of C++ std::vector with manual memory management and type safety.</p>
+          <div class="project-tags"><span>C</span><span>Macros</span><span>Data Structures</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-lang">Python</div>
+          <h3>adviceMePhone</h3>
+          <p class="project-sub">Hybrid AI Phone Recommendation</p>
+          <p>Web-based recommendation system using NLP. Implemented DistilBERT + TF-IDF hybrid model, prepared dataset and trained models in a 4-person team.</p>
+          <div class="project-tags"><span>Python</span><span>DistilBERT</span><span>NLP</span><span>TF-IDF</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-lang">Python</div>
+          <h3>HotDog or NotHotDog</h3>
+          <p class="project-sub">Web-Based Image Classification</p>
+          <p>Binary image classifier using transfer learning with fine-tuned MobileNetV2 model and FastAPI backend for inference.</p>
+          <div class="project-tags"><span>Python</span><span>MobileNetV2</span><span>FastAPI</span><span>ML</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="accent">//</span> Certifications</h2>
+      <div class="cert-list">
+        <div class="cert-card">
+          <div class="cert-badge">eJPT</div>
+          <div>
+            <h4>Junior Penetration Tester</h4>
+            <p>INE Security · January 2026</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">CWSE</div>
+          <div>
+            <h4>Certified Web Security Expert</h4>
+            <p>Hackviser · September 2025</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">CAPT</div>
+          <div>
+            <h4>Certified Associate Penetration Tester</h4>
+            <p>Hackviser · July 2025</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">API</div>
+          <div>
+            <h4>API Penetration Testing</h4>
+            <p>APIsec University · July 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title"><span class="accent">//</span> Contact</h2>
+      <p class="contact-desc">Open to internships, collaborations, and interesting projects.</p>
+      <div class="contact-links">
+        <a href="mailto:semihozdmirr@gmail.com" class="contact-item">
+          <span class="contact-icon">✉</span>
+          <span>semihozdmirr@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/semihozdmirr/" target="_blank" class="contact-item">
+          <span class="contact-icon">in</span>
+          <span>linkedin.com/in/semihozdmirr</span>
+        </a>
+        <a href="https://github.com/zyr1on" target="_blank" class="contact-item">
+          <span class="contact-icon">⌥</span>
+          <span>github.com/zyr1on</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>// Built by Semih Özdemir &nbsp;·&nbsp; <span class="accent">2025</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
