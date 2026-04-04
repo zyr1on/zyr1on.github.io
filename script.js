@@ -100,6 +100,8 @@ function applyLang(lang) {
   typedTimer = setTimeout(typeEffect, 300);
 }
 
+applyLang(currentLang);
+
 document.getElementById("lang-toggle").addEventListener("click", () => {
   currentLang = currentLang === "en" ? "tr" : "en";
   applyLang(currentLang);
