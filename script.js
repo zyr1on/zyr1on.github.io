@@ -81,7 +81,7 @@ const translations = {
 };
 
 /* ── Language ────────────────────────────────────────────────── */
-let currentLang = "tr"; // "tr" , "en"
+let currentLang = "en"; // "tr" , "en"
 
 function applyLang(lang) {
   const t = translations[lang];
@@ -99,8 +99,6 @@ function applyLang(lang) {
   statusEl.textContent = "";
   typedTimer = setTimeout(typeEffect, 300);
 }
-
-applyLang(currentLang);
 
 document.getElementById("lang-toggle").addEventListener("click", () => {
   currentLang = currentLang === "en" ? "tr" : "en";
