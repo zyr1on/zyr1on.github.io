@@ -1,10 +1,6 @@
 # Semih Özdemir — Kişisel Portföy Web Sitesi
 
-Bu repo, [zyr1on.github.io](https://zyr1on.github.io) adresinde yayınlanan kişisel portföy web sitesinin kaynak kodlarını içerir. Siber güvenlik, grafik programlama ve sistem geliştirme odaklı, modern, modüler ve çift dil (TR / EN) destekli bir mimariye sahiptir.
-
 ---
-
-## 📁 Proje Yapısı
 
 ```text
 ├── index.html              # Ana HTML iskeleti
@@ -21,10 +17,9 @@ Bu repo, [zyr1on.github.io](https://zyr1on.github.io) adresinde yayınlanan kiş
 
 ---
 
-## 🚀 Yeni Proje Nasıl Eklenir?
+## Proje Şablonu
 
-Artık HTML veya JavaScript mantığına dokunmanıza gerek yok!
-Tek yapmanız gereken [`data/projects.js`](./data/projects.js) dosyasını açıp listenin başına aşağıdaki şablonu kopyalayıp bilgileri doldurmaktır:
+[`data/projects.js`](./data/projects.js) 
 
 ```javascript
 {
@@ -47,13 +42,11 @@ Tek yapmanız gereken [`data/projects.js`](./data/projects.js) dosyasını açı
 },
 ```
 
-> **Not:** Projeyi eklediğinizde "About" bölümündeki `5+ Projects` sayacı da otomatik olarak güncellenir.
-
 ---
 
-## 🎓 Yeni Sertifika Nasıl Eklenir?
+## Sertifika Şablonu
 
-[`data/certifications.js`](./data/certifications.js) dosyasını açıp aşağıdaki şablonu eklemeniz yeterlidir:
+[`data/certifications.js`](./data/certifications.js) 
 
 ```javascript
 {
@@ -72,13 +65,11 @@ Tek yapmanız gereken [`data/projects.js`](./data/projects.js) dosyasını açı
 },
 ```
 
-> **Not:** Sertifika sayacı da otomatik olarak güncellenir.
-
 ---
 
-## ✍️ Yeni Yazı / Makale Nasıl Eklenir?
+## Yazı Şablonu
 
-[`data/articles.js`](./data/articles.js) dosyasını açıp listenin başına aşağıdaki şablonu kopyalayarak yeni DEV.to, Medium veya blog yazılarınızı ekleyebilirsiniz:
+[`data/articles.js`](./data/articles.js) 
 
 ```javascript
 {
@@ -103,16 +94,7 @@ Tek yapmanız gereken [`data/projects.js`](./data/projects.js) dosyasını açı
 
 ---
 
-## 🌐 Dil Desteği (TR / EN)
+## (TR / EN)
 
 - Kullanıcıların dil tercihi `localStorage` üzerinde saklanır; sayfayı yenilediklerinde veya tekrar girdiklerinde tercihlerini hatırlar.
-- İlk girişte kullanıcının tarayıcı dili Türkçe ise varsayılan olarak Türkçe, aksi halde İngilizce açılır.
-- Site genelindeki butonlar, başlıklar veya biyografi metinlerini güncellemek için [`data/translations.js`](./data/translations.js) dosyasını düzenleyebilirsiniz.
-
----
-
-## 💻 Yerel Geliştirme
-
-Herhangi bir derleme (build) veya paket yöneticisine ihtiyaç yoktur:
-- `index.html` dosyasını tarayıcınızda çift tıklayarak doğrudan açabilirsiniz (CORS kısıtlaması olmadan çalışır).
-- Veya VS Code Live Server / `python -m http.server` ile test edebilirsiniz.
+- [`data/translations.js`](./data/translations.js) 
