@@ -24,6 +24,7 @@ window.PORTFOLIO_TRANSLATIONS = {
     nav_skills:   "Skills",
     nav_projects: "Projects",
     nav_certs:    "Certs",
+    nav_articles: "Articles",
     nav_contact:  "Contact",
 
     // Hero
@@ -50,6 +51,11 @@ window.PORTFOLIO_TRANSLATIONS = {
     filter_graphics: "Graphics",
     filter_ai:       "AI & ML",
 
+    // Articles section
+    filter_articles_all:   "All",
+    filter_articles_devto: "DEV.to",
+    read_article_btn:      "Read Article ↗",
+
     // Project & Cert card labels
     proj_code_btn: "Source",
     proj_demo_btn: "Live Demo",
@@ -75,6 +81,7 @@ window.PORTFOLIO_TRANSLATIONS = {
     nav_skills:   "Yetenekler",
     nav_projects: "Projeler",
     nav_certs:    "Sertifikalar",
+    nav_articles: "Yazılar",
     nav_contact:  "İletişim",
 
     // Hero
@@ -100,6 +107,11 @@ window.PORTFOLIO_TRANSLATIONS = {
     filter_security: "Siber Güvenlik",
     filter_graphics: "Grafik",
     filter_ai:       "Yapay Zeka",
+
+    // Yazılar bölümü
+    filter_articles_all:   "Tümü",
+    filter_articles_devto: "DEV.to",
+    read_article_btn:      "Yazıyı Oku ↗",
 
     // Proje & Sertifika butonları
     proj_code_btn: "Kaynak Kod",

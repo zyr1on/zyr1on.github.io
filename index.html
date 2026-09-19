@@ -30,6 +30,7 @@
       <li><a href="#skills"         data-i18n="nav_skills">Skills</a></li>
       <li><a href="#projects"       data-i18n="nav_projects">Projects</a></li>
       <li><a href="#certifications" data-i18n="nav_certs">Certs</a></li>
+      <li><a href="#articles"       data-i18n="nav_articles">Articles</a></li>
       <li><a href="#contact"        data-i18n="nav_contact">Contact</a></li>
     </ul>
 
@@ -181,6 +182,24 @@
     </div>
   </section>
 
+  <!-- ARTICLES -->
+  <section id="articles">
+    <div class="section-inner">
+      <div class="section-header-flex">
+        <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_articles">Articles</span></h2>
+        
+        <!-- Platform Filter Tabs -->
+        <div class="project-filters" id="article-filters">
+          <button class="filter-btn active" data-article-filter="all" data-i18n="filter_articles_all">All</button>
+          <button class="filter-btn" data-article-filter="devto" data-i18n="filter_articles_devto">DEV.to</button>
+        </div>
+      </div>
+
+      <!-- Dynamically generated from data/articles.js -->
+      <div class="articles-grid" id="articles-container"></div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner contact-inner">
@@ -244,6 +263,7 @@
   <script src="data/skills.js"></script>
   <script src="data/projects.js"></script>
   <script src="data/certifications.js"></script>
+  <script src="data/articles.js"></script>
   
   <!-- MAIN CONTROLLER SCRIPT -->
   <script src="script.js" defer></script>

@@ -813,6 +813,152 @@ section {
   font-family: var(--font-mono);
 }
 
+/* ─── ARTICLES ───────────────────────────────────────────────── */
+#articles {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+}
+
+.article-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  transition: var(--transition);
+}
+
+.article-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 25px var(--accent-glow);
+}
+
+.article-card:hover::before {
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.article-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.article-platform {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  border-radius: 4px;
+  padding: 0.15rem 0.6rem;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.article-platform.devto {
+  color: #00c8ff;
+  background: rgba(0, 200, 255, 0.08);
+  border-color: rgba(0, 200, 255, 0.25);
+}
+
+.article-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.article-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-white);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.article-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.article-card h3 a:hover {
+  color: var(--accent);
+}
+
+.article-desc {
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 1.6rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.article-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  color: var(--text-dim);
+  transition: var(--transition);
+}
+
+.article-read-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--transition);
+}
+
+.article-read-link:hover {
+  text-shadow: 0 0 10px var(--accent-glow);
+  transform: translateX(3px);
+}
+
 /* ─── CONTACT ────────────────────────────────────────────────── */
 #contact {
   background: var(--bg2);

@@ -19,12 +19,15 @@
   const skillsContainer   = document.getElementById("skills-container");
   const projectsContainer = document.getElementById("projects-container");
   const certsContainer    = document.getElementById("certs-container");
-  const filterBtns        = document.querySelectorAll(".filter-btn");
+  const articlesContainer = document.getElementById("articles-container");
+  const filterBtns        = document.querySelectorAll("#project-filters .filter-btn");
+  const articleFilterBtns = document.querySelectorAll("#article-filters .filter-btn");
   const statProjectsEl    = document.getElementById("stat-projects");
   const statCertsEl       = document.getElementById("stat-certs");
   const scrollProgress    = document.getElementById("scroll-progress");
   const toastEl           = document.getElementById("toast");
   const copyEmailBtn      = document.getElementById("copy-email-btn");
+  let activeArticleFilter = "all";
 
   /* ── 2. DYNAMIC RENDERING FUNCTIONS ─────────────────────────── */
 
@@ -139,6 +142,44 @@
     observeFadeUps();
   }
 
+  // Render Articles
+  function renderArticles(lang, filter = "all") {
+    if (!articlesContainer || !window.PORTFOLIO_ARTICLES) return;
+    articlesContainer.innerHTML = "";
+
+    const t = window.PORTFOLIO_TRANSLATIONS[lang] || window.PORTFOLIO_TRANSLATIONS.en;
+    const filteredArticles = window.PORTFOLIO_ARTICLES.filter(art => {
+      if (filter === "all") return true;
+      return art.platform === filter;
+    });
+
+    filteredArticles.forEach(art => {
+      const data = art[lang] || art.en;
+      const card = document.createElement("div");
+      card.className = "article-card fade-up";
+
+      const tagsHtml = (art.tags || []).map(tag => `<span>${tag}</span>`).join("");
+
+      card.innerHTML = `
+        <div class="article-card-header">
+          <span class="article-platform ${art.platform}">${art.platformLabel}</span>
+          <span class="article-date">${data.date} &nbsp;·&nbsp; ${data.readTime}</span>
+        </div>
+        <h3><a href="${art.url}" target="_blank" rel="noopener noreferrer">${data.title}</a></h3>
+        <p class="article-desc">${data.description}</p>
+        <div class="article-footer">
+          <div class="article-tags">${tagsHtml}</div>
+          <a href="${art.url}" target="_blank" rel="noopener noreferrer" class="article-read-link">
+            <span>${t.read_article_btn || "Read Article ↗"}</span>
+          </a>
+        </div>
+      `;
+      articlesContainer.appendChild(card);
+    });
+
+    observeFadeUps();
+  }
+
   /* ── 3. I18N & LANGUAGE MANAGEMENT ──────────────────────────── */
   function applyLanguage(lang) {
     currentLang = lang;
@@ -164,6 +205,7 @@
     renderSkills(lang);
     renderProjects(lang, activeFilter);
     renderCertifications(lang);
+    renderArticles(lang, activeArticleFilter);
 
     // Reset terminal typed effect with current language messages
     resetTypedEffect(t.typed_messages);
@@ -176,13 +218,22 @@
     });
   }
 
-  /* ── 4. PROJECT CATEGORY FILTERS ────────────────────────────── */
+  /* ── 4. PROJECT & ARTICLE CATEGORY FILTERS ──────────────────── */
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       activeFilter = btn.getAttribute("data-filter");
       renderProjects(currentLang, activeFilter);
+    });
+  });
+
+  articleFilterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      articleFilterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeArticleFilter = btn.getAttribute("data-article-filter");
+      renderArticles(currentLang, activeArticleFilter);
     });
   });
 

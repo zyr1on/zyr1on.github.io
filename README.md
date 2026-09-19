@@ -13,6 +13,7 @@ Bu repo, [zyr1on.github.io](https://zyr1on.github.io) adresinde yayınlanan kiş
 ├── data/                   # ⚡ İÇERİKLERİN YÖNETİLDİĞİ KLASÖR
 │   ├── projects.js         # Projeler listesi (Yeni proje ekleme yeri)
 │   ├── certifications.js   # Sertifikalar listesi (Yeni sertifika ekleme yeri)
+│   ├── articles.js         # Yazılar / Makaleler listesi (DEV.to, Medium vb.)
 │   ├── skills.js           # Yetenek kategorileri ve maddeleri
 │   └── translations.js     # Site metinleri (Hakkımda, sayaçlar, terminal mesajları)
 └── README.md
@@ -72,6 +73,34 @@ Tek yapmanız gereken [`data/projects.js`](./data/projects.js) dosyasını açı
 ```
 
 > **Not:** Sertifika sayacı da otomatik olarak güncellenir.
+
+---
+
+## ✍️ Yeni Yazı / Makale Nasıl Eklenir?
+
+[`data/articles.js`](./data/articles.js) dosyasını açıp listenin başına aşağıdaki şablonu kopyalayarak yeni DEV.to, Medium veya blog yazılarınızı ekleyebilirsiniz:
+
+```javascript
+{
+  id: "modern-glsl-shader-dev",
+  platform: "devto", // Filtreleme için: "devto", "medium", "personal"
+  platformLabel: "DEV.to",
+  url: "https://dev.to/semihozdmirr/...",
+  tags: ["GLSL", "Graphics", "Shaders"],
+  en: {
+    title: "Article Title in English",
+    description: "Short summary of your article.",
+    date: "2025",
+    readTime: "5 min read"
+  },
+  tr: {
+    title: "Türkçe Yazı Başlığı",
+    description: "Yazınızın kısa Türkçe özeti.",
+    date: "2025",
+    readTime: "5 dk okuma"
+  }
+},
+```
 
 ---
 
