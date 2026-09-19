@@ -38,12 +38,12 @@ window.PORTFOLIO_ARTICLES = [
     tags: ["GLSL", "Zed", "VS Code", "Graphics", "Shaders"],
     en: {
       description: "A practical guide to setting up lightweight, modern GLSL shader editing, autocomplete, and real-time diagnostics in Zed and VS Code with zero friction.",
-      date: "2025",
+      date: "September 20, 2026",
       readTime: "5 min read"
     },
     tr: {
       description: "Zed ve VS Code üzerinde ek kuruluma boğulmadan anlık hata tanılama, otomatik tamamlama ve modern GLSL shader geliştirme ortamı kurma rehberi.",
-      date: "2025",
+      date: "20 Eylül 2026",
       readTime: "5 dk okuma"
     }
   }
