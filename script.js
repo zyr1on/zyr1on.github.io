@@ -165,7 +165,7 @@
           <span class="article-platform ${art.platform}">${art.platformLabel}</span>
           <span class="article-date">${data.date} &nbsp;·&nbsp; ${data.readTime}</span>
         </div>
-        <h3><a href="${art.url}" target="_blank" rel="noopener noreferrer">${data.title}</a></h3>
+        <h3><a href="${art.url}" target="_blank" rel="noopener noreferrer">${art.title || data.title}</a></h3>
         <p class="article-desc">${data.description}</p>
         <div class="article-footer">
           <div class="article-tags">${tagsHtml}</div>

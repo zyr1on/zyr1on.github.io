@@ -83,18 +83,17 @@ Tek yapmanız gereken [`data/projects.js`](./data/projects.js) dosyasını açı
 ```javascript
 {
   id: "modern-glsl-shader-dev",
+  title: "Modern GLSL Shader Development in Zed & VS Code: Zero Setup, Real-Time Diagnostics", // Orijinal başlık (çevrilmez)
   platform: "devto", // Filtreleme için: "devto", "medium", "personal"
   platformLabel: "DEV.to",
   url: "https://dev.to/semihozdmirr/...",
   tags: ["GLSL", "Graphics", "Shaders"],
   en: {
-    title: "Article Title in English",
-    description: "Short summary of your article.",
+    description: "Short summary of your article in English.",
     date: "2025",
     readTime: "5 min read"
   },
   tr: {
-    title: "Türkçe Yazı Başlığı",
     description: "Yazınızın kısa Türkçe özeti.",
     date: "2025",
     readTime: "5 dk okuma"
