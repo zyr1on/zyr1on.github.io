@@ -3,31 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Semih Özdemir — Computer Engineering Student Portfolio. Cybersecurity, Graphics Programming, and Systems Development."/>
   <title>Semih Özdemir — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <canvas id="bg-canvas"></canvas>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <!-- NAV -->
   <nav>
-    <span class="nav-logo">&gt; semih.exe</span>
-    <ul>
+    <a href="#" class="nav-logo" aria-label="Home">&gt; semih.exe</a>
+    
+    <ul id="nav-menu">
       <li><a href="#about"          data-i18n="nav_about">About</a></li>
       <li><a href="#skills"         data-i18n="nav_skills">Skills</a></li>
       <li><a href="#projects"       data-i18n="nav_projects">Projects</a></li>
       <li><a href="#certifications" data-i18n="nav_certs">Certs</a></li>
       <li><a href="#contact"        data-i18n="nav_contact">Contact</a></li>
     </ul>
-    <button id="lang-toggle" aria-label="Switch language">TR</button>
+
+    <div class="nav-actions">
+      <button id="lang-toggle" aria-label="Switch language">
+        <span class="lang-icon">🌐</span>
+        <span id="lang-label">TR</span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
     <div class="hero-content">
+      <div class="status-badge">
+        <span class="status-pulse"></span>
+        <span class="status-text" data-i18n="hero_status">Open to Internships & Projects</span>
+      </div>
       <p class="hero-tag" data-i18n="hero_tag">// Computer Engineering Student</p>
       <h1>Semih<br><span class="accent">Özdemir</span></h1>
       <p class="hero-desc" data-i18n="hero_desc">Cybersecurity · Graphics Programming · Systems Development</p>
@@ -35,18 +55,55 @@
         <a href="#projects" class="btn-primary" data-i18n="hero_btn1">View Projects</a>
         <a href="#contact"  class="btn-outline"  data-i18n="hero_btn2">Get in Touch</a>
       </div>
+
+      <!-- Quick Social Links in Hero -->
+      <div class="hero-socials">
+        <a href="https://github.com/zyr1on" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub" title="GitHub: @zyr1on">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/semihozdmirr/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn" title="LinkedIn: semihozdmirr">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 1.64 1.64 1.64 1.64 0 0 0-1.64-1.64z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://www.youtube.com/@semihozdmirr" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube" title="YouTube: @semihozdmirr">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <a href="https://dev.to/semihozdmirr" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="DEV.to" title="DEV.to: @semihozdmirr">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.42 10.05c-.18-.12-.46-.19-.84-.19H5.25v4.29h1.33c.38 0 .66-.07.84-.19.18-.12.28-.34.28-.65v-2.61c0-.31-.1-.53-.28-.65zM3.63 8.15H1v7.7h2.63c.95 0 1.68-.22 2.18-.65.5-.43.76-1.07.76-1.92v-2.56c0-.85-.26-1.49-.76-1.92-.5-.43-1.23-.65-2.18-.65zm6.86 0H8.38v7.7h2.11v-3.1h1.56v-1.63h-1.56V9.78h1.69V8.15zm5.54 0h-1.87l-1.39 5.34-1.39-5.34h-1.87l2.25 7.7h2.02l2.25-7.7z"/>
+          </svg>
+          <span>DEV.to</span>
+        </a>
+        <a href="mailto:semihozdmirr@gmail.com" class="social-icon-btn hero-email-btn" aria-label="Email" title="Click to copy semihozdmirr@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span>Email</span>
+        </a>
+      </div>
     </div>
-    <div class="hero-terminal">
+
+    <div class="hero-terminal" id="terminal">
       <div class="terminal-bar">
         <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
         <span class="terminal-title">~/semih</span>
+        <span class="terminal-badge">bash</span>
       </div>
       <div class="terminal-body">
         <p><span class="prompt">$</span> whoami</p>
         <p class="out">semih_ozdemir</p>
-        <p><span class="prompt">$</span> skills --list</p>
-        <p class="out">C/C++ · Python · OpenGL · Cybersecurity</p>
-        <p><span class="prompt">$</span> status</p>
+        <p><span class="prompt">$</span> cat contact.json</p>
+        <p class="out">{"github":"@zyr1on", "mail":"semihozdmirr"}</p>
+        <p><span class="prompt">$</span> status --live</p>
         <p class="out"><span class="blink-cursor">▋</span> <span id="typed-status"></span></p>
       </div>
     </div>
@@ -63,10 +120,22 @@
           <p data-i18n="about_p3">A motivated team player eager to gain hands-on experience and apply technical knowledge to real-world projects.</p>
         </div>
         <div class="about-stats">
-          <div class="stat"><span class="stat-num">3.48</span><span class="stat-label" data-i18n="stat_gpa">GPA</span></div>
-          <div class="stat"><span class="stat-num">5+</span><span class="stat-label"  data-i18n="stat_projects">Projects</span></div>
-          <div class="stat"><span class="stat-num">4</span><span class="stat-label"   data-i18n="stat_certs">Certifications</span></div>
-          <div class="stat"><span class="stat-num">3+</span><span class="stat-label"  data-i18n="stat_years">Years Coding</span></div>
+          <div class="stat">
+            <span class="stat-num">3.48</span>
+            <span class="stat-label" data-i18n="stat_gpa">GPA</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="stat-projects">5+</span>
+            <span class="stat-label" data-i18n="stat_projects">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="stat-certs">4</span>
+            <span class="stat-label" data-i18n="stat_certs">Certifications</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">3+</span>
+            <span class="stat-label" data-i18n="stat_years">Years Coding</span>
+          </div>
         </div>
       </div>
     </div>
@@ -76,78 +145,30 @@
   <section id="skills">
     <div class="section-inner">
       <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_skills">Skills</span></h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">⚙️</div>
-          <h3 data-i18n="skill1_title">Programming</h3>
-          <p>C · C++ · Python · C# · Assembly (RISC-V) · Bash</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🎮</div>
-          <h3 data-i18n="skill2_title">Graphics & Game Dev</h3>
-          <p>OpenGL 4.6 · Unity Engine · GLSL/HLSL Shaders · EnTT ECS</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🔒</div>
-          <h3 data-i18n="skill3_title">Cybersecurity</h3>
-          <p data-i18n="skill3_desc">Network & Web Penetration Testing · API Security · Metasploit · WireShark · Burp Suite</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🛠️</div>
-          <h3 data-i18n="skill4_title">Tools & Platforms</h3>
-          <p>Git · GitHub · Linux (Debian/Ubuntu) · Docker</p>
-        </div>
-      </div>
+      <!-- Dynamically generated from data/skills.js -->
+      <div class="skills-grid" id="skills-container"></div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-inner">
-      <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_projects">Projects</span></h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-lang">C++</div>
-          <h3>SamEngine</h3>
-          <p class="project-sub" data-i18n="proj1_sub">OpenGL 4.6 3D Model Renderer</p>
-          <p data-i18n="proj1_desc">Real-time 3D renderer built from scratch in C++20. Features bindless textures, PBR material pipeline, UBO-based camera/lighting, Poisson disk shadow mapping, and a dockable ImGui editor.</p>
-          <div class="project-tags"><span>C++20</span><span>OpenGL 4.6</span><span>ImGui</span><span>Assimp</span></div>
+      <div class="section-header-flex">
+        <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_projects">Projects</span></h2>
+        
+        <!-- Category Filter Buttons -->
+        <div class="project-filters" id="project-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+          <button class="filter-btn" data-filter="cpp" data-i18n="filter_cpp">C / C++</button>
+          <button class="filter-btn" data-filter="python" data-i18n="filter_python">Python</button>
+          <button class="filter-btn" data-filter="security" data-i18n="filter_security">Cybersecurity</button>
+          <button class="filter-btn" data-filter="graphics" data-i18n="filter_graphics">Graphics</button>
+          <button class="filter-btn" data-filter="ai" data-i18n="filter_ai">AI & ML</button>
         </div>
-
-        <div class="project-card">
-          <div class="project-lang">Python</div>
-          <h3>Binary Analyzer</h3>
-          <p class="project-sub" data-i18n="proj2_sub">Malware Analysis Framework</p>
-          <p data-i18n="proj2_desc">Static malware analysis tool for ELF and PE binaries. Parses binaries using LIEF, detects suspicious API calls and IOC indicators without execution.</p>
-          <div class="project-tags"><span>Python</span><span>LIEF</span><span>Malware Analysis</span></div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-lang">C</div>
-          <h3>CVector.h</h3>
-          <p class="project-sub" data-i18n="proj3_sub">Generic Dynamic Array for C</p>
-          <p data-i18n="proj3_desc">Generic dynamic array in C using macros, replicating core features of C++ std::vector with manual memory management and type safety.</p>
-          <div class="project-tags"><span>C</span><span>Macros</span><span>Data Structures</span></div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-lang">Python</div>
-          <h3>adviceMePhone</h3>
-          <p class="project-sub" data-i18n="proj4_sub">Hybrid AI Phone Recommendation</p>
-          <p data-i18n="proj4_desc">Web-based recommendation system using NLP. Implemented DistilBERT + TF-IDF hybrid model, prepared dataset and trained models in a 4-person team.</p>
-          <div class="project-tags"><span>Python</span><span>DistilBERT</span><span>NLP</span><span>TF-IDF</span></div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-lang">Python</div>
-          <h3>HotDog or NotHotDog</h3>
-          <p class="project-sub" data-i18n="proj5_sub">Web-Based Image Classification</p>
-          <p data-i18n="proj5_desc">Binary image classifier using transfer learning with fine-tuned MobileNetV2 model and FastAPI backend for inference.</p>
-          <div class="project-tags"><span>Python</span><span>MobileNetV2</span><span>FastAPI</span><span>ML</span></div>
-        </div>
-
       </div>
+
+      <!-- Dynamically generated from data/projects.js -->
+      <div class="projects-grid" id="projects-container"></div>
     </div>
   </section>
 
@@ -155,36 +176,8 @@
   <section id="certifications">
     <div class="section-inner">
       <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_certs">Certs</span></h2>
-      <div class="cert-list">
-        <div class="cert-card">
-          <div class="cert-badge">eJPT</div>
-          <div>
-            <h4 data-i18n="cert1_title">Junior Penetration Tester</h4>
-            <p>INE Security · <span data-i18n="cert1_date">January 2026</span></p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-badge">CWSE</div>
-          <div>
-            <h4 data-i18n="cert2_title">Certified Web Security Expert</h4>
-            <p>Hackviser · <span data-i18n="cert2_date">September 2025</span></p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-badge">CAPT</div>
-          <div>
-            <h4 data-i18n="cert3_title">Certified Associate Penetration Tester</h4>
-            <p>Hackviser · <span data-i18n="cert3_date">July 2025</span></p>
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-badge">API</div>
-          <div>
-            <h4 data-i18n="cert4_title">API Penetration Testing</h4>
-            <p>APIsec University · <span data-i18n="cert4_date">July 2025</span></p>
-          </div>
-        </div>
-      </div>
+      <!-- Dynamically generated from data/certifications.js -->
+      <div class="cert-list" id="certs-container"></div>
     </div>
   </section>
 
@@ -193,28 +186,66 @@
     <div class="section-inner contact-inner">
       <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_contact">Contact</span></h2>
       <p class="contact-desc" data-i18n="contact_desc">Open to internships, collaborations, and interesting projects.</p>
+      
       <div class="contact-links">
-        <a href="mailto:semihozdmirr@gmail.com" class="contact-item">
-          <span class="contact-icon">✉</span>
-          <span>semihozdmirr@gmail.com</span>
+        <a href="mailto:semihozdmirr@gmail.com" class="contact-item" id="copy-email-btn" title="Click to copy email">
+          <span class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </span>
+          <span class="contact-text">semihozdmirr@gmail.com</span>
+          <span class="copy-icon" aria-label="Copy">📋</span>
         </a>
-        <a href="https://www.linkedin.com/in/semihozdmirr/" target="_blank" class="contact-item">
-          <span class="contact-icon">in</span>
+        <a href="https://www.linkedin.com/in/semihozdmirr/" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 1.64 1.64 1.64 1.64 0 0 0-1.64-1.64z"/>
+            </svg>
+          </span>
           <span>linkedin.com/in/semihozdmirr</span>
         </a>
-        <a href="https://github.com/zyr1on" target="_blank" class="contact-item">
-          <span class="contact-icon">⌥</span>
+        <a href="https://github.com/zyr1on" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </span>
           <span>github.com/zyr1on</span>
+        </a>
+        <a href="https://www.youtube.com/@semihozdmirr" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </span>
+          <span>youtube.com/@semihozdmirr</span>
+        </a>
+        <a href="https://dev.to/semihozdmirr" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7.42 10.05c-.18-.12-.46-.19-.84-.19H5.25v4.29h1.33c.38 0 .66-.07.84-.19.18-.12.28-.34.28-.65v-2.61c0-.31-.1-.53-.28-.65zM3.63 8.15H1v7.7h2.63c.95 0 1.68-.22 2.18-.65.5-.43.76-1.07.76-1.92v-2.56c0-.85-.26-1.49-.76-1.92-.5-.43-1.23-.65-2.18-.65zm6.86 0H8.38v7.7h2.11v-3.1h1.56v-1.63h-1.56V9.78h1.69V8.15zm5.54 0h-1.87l-1.39 5.34-1.39-5.34h-1.87l2.25 7.7h2.02l2.25-7.7z"/>
+            </svg>
+          </span>
+          <span>dev.to/semihozdmirr</span>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>// Built by Semih Özdemir &nbsp;·&nbsp; <span class="accent">2025</span></p>
+    <p><span data-i18n="footer_text">// Built by Semih Özdemir</span> &nbsp;·&nbsp; <span class="accent">2026</span></p>
   </footer>
-  <script src="script.js" defer></script>
 
+  <!-- DATA FILES (Modular & Easy to Edit) -->
+  <script src="data/translations.js"></script>
+  <script src="data/skills.js"></script>
+  <script src="data/projects.js"></script>
+  <script src="data/certifications.js"></script>
   
+  <!-- MAIN CONTROLLER SCRIPT -->
+  <script src="script.js" defer></script>
 </body>
 </html>
