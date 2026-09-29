@@ -234,6 +234,14 @@
   const themes = ["theme-cyber", "theme-matrix", "theme-amber", "theme-dracula"];
 
   // DOM Elements
+  const shellModalEl   = document.getElementById("shell-modal");
+  const shellBackdrop  = document.getElementById("shell-modal-backdrop");
+  const closeBtn       = document.getElementById("shell-close-btn");
+  const closeDot       = document.getElementById("shell-close-dot");
+  const minDot         = document.getElementById("shell-minimize-dot");
+  const maxDot         = document.getElementById("shell-maximize-dot");
+  const navShellBtn    = document.getElementById("nav-shell-btn");
+  const heroTerminal   = document.getElementById("terminal");
   const shellEl        = document.getElementById("interactive-shell");
   const screenEl       = document.getElementById("shell-screen");
   const outputEl       = document.getElementById("shell-output");
@@ -245,6 +253,27 @@
   const themeToggleBtn = document.getElementById("shell-theme-toggle");
 
   if (!shellEl || !cmdInputEl || !outputEl) return;
+
+  function openShellModal() {
+    if (!shellModalEl) return;
+    shellModalEl.classList.add("active");
+    if (shellModalEl.setAttribute) shellModalEl.setAttribute("aria-hidden", "false");
+    if (document.body && document.body.classList) document.body.classList.add("shell-modal-open");
+    setTimeout(() => {
+      if (cmdInputEl) cmdInputEl.focus();
+      scrollToBottom();
+    }, 120);
+  }
+
+  function closeShellModal() {
+    if (!shellModalEl) return;
+    shellModalEl.classList.remove("active");
+    if (shellModalEl.setAttribute) shellModalEl.setAttribute("aria-hidden", "true");
+    if (document.body && document.body.classList) document.body.classList.remove("shell-modal-open");
+    if (typeof window !== "undefined" && window.location && window.location.hash === "#shell") {
+      history.replaceState(null, null, " ");
+    }
+  }
 
   /* ── 3. PATH RESOLUTION & VFS UTILITIES ─────────────────────── */
   function normalizePath(targetPath) {
@@ -643,13 +672,16 @@
       return;
     }
 
-    const sections = ["about", "skills", "projects", "shell", "certifications", "articles", "contact"];
+    const sections = ["about", "skills", "projects", "certifications", "articles", "contact"];
     if (sections.includes(target) || sections.includes(target.replace("#", ""))) {
       const id = target.replace("#", "");
       const el = document.getElementById(id);
       if (el) {
         print(`Scrolling to section #${id}...`);
-        el.scrollIntoView({ behavior: "smooth" });
+        closeShellModal();
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 150);
         return;
       }
     }
@@ -813,7 +845,10 @@
         break;
 
       case "exit":
-        print(`<span class="shell-muted">There is no exit from the matrix. (Type 'help' for commands)</span>`);
+        print(`<span class="shell-muted">Closing shell session... Goodbye!</span>`);
+        setTimeout(() => {
+          closeShellModal();
+        }, 400);
         break;
 
       default:
@@ -929,15 +964,16 @@
   }
 
   // Maximize / Restore
-  if (maximizeBtn) {
-    maximizeBtn.addEventListener("click", () => {
-      shellEl.classList.toggle("shell-maximized");
-      const isMax = shellEl.classList.contains("shell-maximized");
-      maximizeBtn.textContent = isMax ? "🗗" : "⛶";
-      scrollToBottom();
-      cmdInputEl.focus();
-    });
+  function toggleMaximize() {
+    shellEl.classList.toggle("shell-maximized");
+    const isMax = shellEl.classList.contains("shell-maximized");
+    if (maximizeBtn) maximizeBtn.textContent = isMax ? "🗗" : "⛶";
+    scrollToBottom();
+    cmdInputEl.focus();
   }
+
+  if (maximizeBtn) maximizeBtn.addEventListener("click", toggleMaximize);
+  if (maxDot) maxDot.addEventListener("click", toggleMaximize);
 
   // Theme toggle button
   if (themeToggleBtn) {
@@ -945,6 +981,51 @@
       e.stopPropagation();
       cycleTheme();
       cmdInputEl.focus();
+    });
+  }
+
+  // Open Shell Modal Triggers
+  document.querySelectorAll('a[href="#shell"], #nav-shell-btn, [data-open-shell]').forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      openShellModal();
+    });
+  });
+
+  if (heroTerminal) {
+    if (heroTerminal.style) heroTerminal.style.cursor = "pointer";
+    if (heroTerminal.setAttribute) heroTerminal.setAttribute("title", "Click to launch interactive shell");
+    heroTerminal.addEventListener("click", () => {
+      openShellModal();
+    });
+  }
+
+  // Close Shell Modal Triggers
+  [closeBtn, closeDot, minDot, shellBackdrop].forEach(btn => {
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeShellModal();
+      });
+    }
+  });
+
+  // Keyboard Escape to close
+  if (typeof window !== "undefined" && typeof window.addEventListener === "function") {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && shellModalEl && shellModalEl.classList.contains("active")) {
+        closeShellModal();
+      }
+    });
+
+    // Open modal if URL has hash #shell
+    if (window.location && window.location.hash === "#shell") {
+      openShellModal();
+    }
+    window.addEventListener("hashchange", () => {
+      if (window.location && window.location.hash === "#shell") {
+        openShellModal();
+      }
     });
   }
 
@@ -965,7 +1046,7 @@
     const banner = `
 <div class="shell-welcome-banner">
   <p><span class="shell-accent">Zyr1on Linux 2.4 (x86_64)</span> — Portfolio Interactive Bash Shell</p>
-  <p class="shell-muted">Type <span class="shell-cmd-hint">'help'</span> for available commands, <span class="shell-cmd-hint">'ls -la'</span> to inspect files, or <span class="shell-cmd-hint">'neofetch'</span> for specs.</p>
+  <p class="shell-muted">Type <span class="shell-cmd-hint">'help'</span> for available commands, <span class="shell-cmd-hint">'ls -la'</span> to inspect files, or <span class="shell-cmd-hint">'exit'</span> to close.</p>
 </div>`;
     print(banner);
   }
