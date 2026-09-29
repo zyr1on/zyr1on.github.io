@@ -1140,8 +1140,8 @@ footer {
     width: 100%;
   }
 
-  .interactive-shell.shell-maximized {
-    inset: 0.5rem;
+  .shell-modal-overlay.is-maximized {
+    padding: 0.35rem;
   }
 }
 
@@ -1670,19 +1670,34 @@ nav ul a.nav-shell-link::after {
 }
 
 /* Maximized / Fullscreen State */
-.interactive-shell.shell-maximized {
-  position: fixed;
-  inset: 1.5rem;
-  z-index: 2100;
-  border-radius: var(--radius-md);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 60px rgba(0, 255, 136, 0.15);
-  backdrop-filter: blur(20px);
+.shell-modal-overlay.is-maximized {
+  padding: 0.75rem;
 }
 
-.interactive-shell.shell-maximized .shell-screen {
-  min-height: unset;
-  max-height: unset;
-  flex: 1;
+.shell-modal-overlay.is-maximized .shell-modal-dialog {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  transform: none !important;
+  transition: none;
+}
+
+.shell-modal-overlay.is-maximized .interactive-shell {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 60px rgba(0, 255, 136, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-modal-overlay.is-maximized .shell-screen {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  height: 100%;
 }
 
 /* ─── TERMINAL THEMES ────────────────────────────────────────── */

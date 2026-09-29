@@ -270,6 +270,12 @@
     shellModalEl.classList.remove("active");
     if (shellModalEl.setAttribute) shellModalEl.setAttribute("aria-hidden", "true");
     if (document.body && document.body.classList) document.body.classList.remove("shell-modal-open");
+    shellModalEl.classList.remove("is-maximized");
+    if (shellEl) shellEl.classList.remove("shell-maximized");
+    if (maximizeBtn) {
+      maximizeBtn.textContent = "⛶";
+      maximizeBtn.title = "Toggle Fullscreen";
+    }
     if (typeof window !== "undefined" && window.location && window.location.hash === "#shell") {
       history.replaceState(null, null, " ");
     }
@@ -965,11 +971,17 @@
 
   // Maximize / Restore
   function toggleMaximize() {
+    if (shellModalEl) {
+      shellModalEl.classList.toggle("is-maximized");
+    }
     shellEl.classList.toggle("shell-maximized");
-    const isMax = shellEl.classList.contains("shell-maximized");
-    if (maximizeBtn) maximizeBtn.textContent = isMax ? "🗗" : "⛶";
+    const isMax = shellModalEl ? shellModalEl.classList.contains("is-maximized") : shellEl.classList.contains("shell-maximized");
+    if (maximizeBtn) {
+      maximizeBtn.textContent = isMax ? "🗗" : "⛶";
+      maximizeBtn.title = isMax ? "Restore Window" : "Toggle Fullscreen";
+    }
     scrollToBottom();
-    cmdInputEl.focus();
+    if (cmdInputEl) cmdInputEl.focus();
   }
 
   if (maximizeBtn) maximizeBtn.addEventListener("click", toggleMaximize);
