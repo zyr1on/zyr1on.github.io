@@ -23,9 +23,14 @@ window.PORTFOLIO_TRANSLATIONS = {
     nav_about:    "About",
     nav_skills:   "Skills",
     nav_projects: "Projects",
+    nav_shell:    "Shell",
     nav_certs:    "Certs",
     nav_articles: "Articles",
     nav_contact:  "Contact",
+
+    // Shell section
+    shell_desc:   "Interactive Unix-style bash shell. Navigate directories, inspect files, and discover hidden secrets.",
+    shell_tip:    "💡 Tip: Press [Tab] to autocomplete, [↑/↓] for history, or type 'help'",
 
     // Hero
     hero_status:  "Open to Internships & Projects",
@@ -80,9 +85,14 @@ window.PORTFOLIO_TRANSLATIONS = {
     nav_about:    "Hakkımda",
     nav_skills:   "Yetenekler",
     nav_projects: "Projeler",
+    nav_shell:    "Shell",
     nav_certs:    "Sertifikalar",
     nav_articles: "Yazılar",
     nav_contact:  "İletişim",
+
+    // Shell bölümü
+    shell_desc:   "İnteraktif Unix tarzı bash terminali. Dizinleri gezin, dosyaları inceleyin ve gizli sırları keşfedin.",
+    shell_tip:    "💡 İpucu: Otomatik tamamlama için [Tab], geçmiş için [↑/↓] kullanın veya 'help' yazın",
 
     // Hero
     hero_status:  "Staj & Proje Tekliflerine Açık",

@@ -29,6 +29,7 @@
       <li><a href="#about"          data-i18n="nav_about">About</a></li>
       <li><a href="#skills"         data-i18n="nav_skills">Skills</a></li>
       <li><a href="#projects"       data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#shell"          data-i18n="nav_shell">Shell</a></li>
       <li><a href="#certifications" data-i18n="nav_certs">Certs</a></li>
       <li><a href="#articles"       data-i18n="nav_articles">Articles</a></li>
       <li><a href="#contact"        data-i18n="nav_contact">Contact</a></li>
@@ -173,6 +174,56 @@
     </div>
   </section>
 
+  <!-- SHELL -->
+  <section id="shell">
+    <div class="section-inner">
+      <div class="section-header-flex">
+        <h2 class="section-title"><span class="accent">//</span> <span data-i18n="nav_shell">Shell</span></h2>
+        
+        <!-- Quick Action Pill Buttons -->
+        <div class="shell-quick-actions">
+          <button class="shell-pill-btn" data-cmd="help" title="Show available commands">help</button>
+          <button class="shell-pill-btn" data-cmd="ls -la" title="List all files & folders">ls -la</button>
+          <button class="shell-pill-btn" data-cmd="cat about.txt" title="Read about.txt">cat about.txt</button>
+          <button class="shell-pill-btn" data-cmd="neofetch" title="System info & logo">neofetch</button>
+          <button class="shell-pill-btn" data-cmd="tree" title="Directory tree">tree</button>
+          <button class="shell-pill-btn" data-cmd="whoami" title="Print user identity">whoami</button>
+          <button class="shell-pill-btn" data-cmd="clear" title="Clear terminal screen">clear</button>
+        </div>
+      </div>
+
+      <p class="shell-desc-text" data-i18n="shell_desc">Interactive Unix-style bash shell. Navigate directories, inspect files, and discover hidden secrets.</p>
+
+      <div class="interactive-shell theme-cyber" id="interactive-shell">
+        <div class="shell-window-header">
+          <div class="shell-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="shell-window-title" id="shell-title-bar">guest@zyr1on: ~ (bash)</div>
+          <div class="shell-window-tools">
+            <button class="shell-tool-btn" id="shell-theme-toggle" title="Cycle Theme (Cyber / Matrix / Amber / Dracula)">🎨</button>
+            <button class="shell-tool-btn" id="shell-maximize-btn" title="Toggle Fullscreen">⛶</button>
+          </div>
+        </div>
+
+        <div class="shell-screen" id="shell-screen">
+          <div class="shell-output" id="shell-output"></div>
+          <div class="shell-input-row" id="shell-input-row">
+            <span class="shell-prompt-display" id="shell-prompt-prefix"><span class="shell-user">guest@zyr1on</span>:<span class="shell-path">~</span>$&nbsp;</span>
+            <input type="text" id="shell-cmd-input" class="shell-cmd-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </div>
+        </div>
+
+        <div class="shell-status-bar">
+          <span class="shell-status-tip" data-i18n="shell_tip">💡 Tip: Press [Tab] to autocomplete, [↑/↓] for history, or type 'help'</span>
+          <span class="shell-status-cwd" id="shell-status-cwd">/home/semih</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-inner">
@@ -267,5 +318,6 @@
   
   <!-- MAIN CONTROLLER SCRIPT -->
   <script src="script.js" defer></script>
+  <script src="shell.js" defer></script>
 </body>
 </html>

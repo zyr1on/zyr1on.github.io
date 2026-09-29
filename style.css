@@ -1134,6 +1134,15 @@ footer {
   .section-inner {
     padding: 0 1.5rem;
   }
+
+  .shell-quick-actions {
+    margin-top: 0.8rem;
+    width: 100%;
+  }
+
+  .interactive-shell.shell-maximized {
+    inset: 0.5rem;
+  }
 }
 
 @media(max-width: 480px) {
@@ -1147,4 +1156,514 @@ footer {
     bottom: 1rem;
     text-align: center;
   }
+
+  .shell-screen {
+    min-height: 320px;
+    max-height: 420px;
+    padding: 1rem 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  .shell-window-title {
+    font-size: 0.74rem;
+  }
+
+  .neofetch-art {
+    font-size: 0.56rem;
+  }
+}
+
+/* ─── INTERACTIVE BASH SHELL SECTION ────────────────────────── */
+#shell {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.shell-desc-text {
+  color: var(--text-dim);
+  font-size: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.02em;
+}
+
+.shell-quick-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.shell-pill-btn {
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.shell-pill-btn:hover {
+  background: rgba(0, 255, 136, 0.16);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.interactive-shell {
+  background: var(--bg2);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 255, 136, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.interactive-shell:hover {
+  border-color: rgba(0, 255, 136, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 255, 136, 0.08);
+}
+
+.shell-window-header {
+  background: var(--bg3);
+  padding: 0.75rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+
+.shell-dots {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.shell-window-title {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.shell-window-tools {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.shell-tool-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.shell-tool-btn:hover {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.1);
+}
+
+.shell-screen {
+  min-height: 400px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding: 1.4rem 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  cursor: text;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.shell-screen::-webkit-scrollbar {
+  width: 6px;
+}
+.shell-screen::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.shell-output {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shell-line {
+  word-break: break-word;
+}
+
+.shell-echo-row {
+  margin-top: 0.25rem;
+}
+
+.shell-user {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.shell-path {
+  color: var(--accent2);
+  font-weight: 700;
+}
+
+.shell-echoed-cmd {
+  color: var(--text-white);
+  font-weight: 500;
+}
+
+.shell-err {
+  color: #ff5f57;
+}
+
+.shell-accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.shell-accent2 {
+  color: var(--accent2);
+}
+
+.shell-muted {
+  color: var(--text-dim);
+}
+
+.shell-dir {
+  color: var(--accent2);
+  font-weight: 700;
+}
+
+.shell-file {
+  color: var(--text);
+}
+
+.shell-txt {
+  color: #e6edf3;
+}
+
+.shell-json {
+  color: #f1e05a;
+}
+
+.shell-link {
+  color: var(--accent2);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.shell-link:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.shell-cmd-hint {
+  color: var(--accent);
+  background: rgba(0, 255, 136, 0.08);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.shell-matrix-line {
+  color: var(--accent);
+  font-family: monospace;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 8px var(--accent-glow);
+  display: block;
+}
+
+.shell-welcome-banner {
+  border-left: 3px solid var(--accent);
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 255, 136, 0.03);
+  margin-bottom: 0.5rem;
+}
+
+.shell-cat-output {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-sm);
+  margin: 0.3rem 0;
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.shell-ls-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  margin: 0.3rem 0;
+}
+
+.shell-ls-long {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.ls-row {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.ls-row .perm {
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+.ls-row .owner {
+  color: var(--accent);
+}
+
+.ls-row .size {
+  color: #febc2e;
+}
+
+.ls-row .date {
+  color: var(--text-dim);
+}
+
+.shell-help-wrap {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  margin: 0.4rem 0;
+}
+
+.shell-highlight {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+
+.shell-help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.4rem 1.5rem;
+  margin: 0.6rem 0;
+}
+
+.cmd-name {
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-block;
+  min-width: 105px;
+}
+
+.cmd-desc {
+  color: var(--text-dim);
+  font-size: 0.86rem;
+}
+
+.shell-neofetch {
+  display: flex;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.6rem 0;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  border-radius: var(--radius-sm);
+}
+
+.neofetch-art {
+  color: var(--accent);
+  font-family: monospace;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  text-shadow: 0 0 10px var(--accent-glow);
+  margin: 0;
+}
+
+.neofetch-info {
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.neofetch-colors {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+
+.color-block {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.cb-black   { background: #1e1e1e; }
+.cb-red     { background: #ff5555; }
+.cb-green   { background: #50fa7b; }
+.cb-yellow  { background: #f1fa8c; }
+.cb-blue    { background: #bd93f9; }
+.cb-magenta { background: #ff79c6; }
+.cb-cyan    { background: #8be9fd; }
+.cb-white   { background: #f8f8f2; }
+
+.shell-history-list {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.shell-input-row {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  min-height: 28px;
+}
+
+.shell-prompt-display {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.shell-cmd-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-white);
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  padding: 0;
+  caret-color: var(--accent);
+  line-height: inherit;
+}
+
+.shell-status-bar {
+  background: var(--bg3);
+  padding: 0.55rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  user-select: none;
+}
+
+.shell-status-cwd {
+  color: var(--accent2);
+}
+
+/* Maximized / Fullscreen State */
+.interactive-shell.shell-maximized {
+  position: fixed;
+  inset: 1.5rem;
+  z-index: 1000;
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 60px rgba(0, 255, 136, 0.15);
+  backdrop-filter: blur(20px);
+}
+
+.interactive-shell.shell-maximized .shell-screen {
+  min-height: unset;
+  max-height: unset;
+  flex: 1;
+}
+
+/* ─── TERMINAL THEMES ────────────────────────────────────────── */
+.interactive-shell.theme-cyber {
+  /* Default cyberpunk green & cyan */
+}
+
+.interactive-shell.theme-matrix {
+  background: #030a03;
+  border-color: rgba(32, 194, 14, 0.3);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(32, 194, 14, 0.08);
+}
+.interactive-shell.theme-matrix .shell-window-header,
+.interactive-shell.theme-matrix .shell-status-bar {
+  background: #061406;
+}
+.interactive-shell.theme-matrix .shell-user,
+.interactive-shell.theme-matrix .shell-accent,
+.interactive-shell.theme-matrix .cmd-name {
+  color: #20c20e;
+}
+.interactive-shell.theme-matrix .shell-path,
+.interactive-shell.theme-matrix .shell-dir {
+  color: #15820a;
+}
+.interactive-shell.theme-matrix .shell-cmd-input {
+  caret-color: #20c20e;
+}
+
+.interactive-shell.theme-amber {
+  background: #0f0a02;
+  border-color: rgba(255, 176, 0, 0.3);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 176, 0, 0.08);
+}
+.interactive-shell.theme-amber .shell-window-header,
+.interactive-shell.theme-amber .shell-status-bar {
+  background: #191004;
+}
+.interactive-shell.theme-amber .shell-user,
+.interactive-shell.theme-amber .shell-accent,
+.interactive-shell.theme-amber .cmd-name {
+  color: #ffb000;
+}
+.interactive-shell.theme-amber .shell-path,
+.interactive-shell.theme-amber .shell-dir {
+  color: #ff7700;
+}
+.interactive-shell.theme-amber .shell-cmd-input {
+  caret-color: #ffb000;
+}
+
+.interactive-shell.theme-dracula {
+  background: #1e1f29;
+  border-color: rgba(189, 147, 249, 0.3);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(189, 147, 249, 0.08);
+}
+.interactive-shell.theme-dracula .shell-window-header,
+.interactive-shell.theme-dracula .shell-status-bar {
+  background: #282a36;
+}
+.interactive-shell.theme-dracula .shell-user,
+.interactive-shell.theme-dracula .shell-accent,
+.interactive-shell.theme-dracula .cmd-name {
+  color: #50fa7b;
+}
+.interactive-shell.theme-dracula .shell-path,
+.interactive-shell.theme-dracula .shell-dir {
+  color: #8be9fd;
+}
+.interactive-shell.theme-dracula .shell-cmd-input {
+  caret-color: #bd93f9;
 }

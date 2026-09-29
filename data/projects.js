@@ -27,6 +27,42 @@
 
 window.PORTFOLIO_PROJECTS = [
   {
+    id: "hlsl-shaderlab-extended",
+    title: "HLSL & ShaderLab Extended",
+    lang: "Rust",
+    category: "graphics",
+    tags: ["Rust", "HLSL", "ShaderLab", "LSP", "Zed", "VS Code"],
+    github: "https://github.com/zyr1on/hlsl-shaderlab-extended",
+    demo: "",
+    featured: true,
+    en: {
+      subtitle: "HLSL & ShaderLab Dev Suite for Editors",
+      description: "All-in-one HLSL and Unity ShaderLab development suite for modern code editors (Zed & VS Code). Real-time Microsoft DXC diagnostics, smart autocompletion, 198+ intrinsics, formatting, and go-to-definition."
+    },
+    tr: {
+      subtitle: "Editörler için HLSL ve ShaderLab Geliştirme Paketi",
+      description: "Modern kod editörleri (Zed ve VS Code) için hepsi bir arada HLSL ve Unity ShaderLab geliştirme paketi. Gerçek zamanlı Microsoft DXC hata denetimi, akıllı tamamlama, 198+ HLSL dahili fonksiyon desteği, biçimlendirme ve tanıma gitme sunar."
+    }
+  },
+  {
+    id: "glsl-extended",
+    title: "GLSL Extended",
+    lang: "Rust",
+    category: "graphics",
+    tags: ["Rust", "GLSL", "OpenGL", "Vulkan", "LSP", "Zed", "VS Code"],
+    github: "https://github.com/zyr1on/glsl-extended",
+    demo: "",
+    featured: true,
+    en: {
+      subtitle: "GLSL Shader Dev Suite for Editors",
+      description: "All-in-one GLSL shader development suite for modern code editors (Zed & VS Code). Unified Rust language server with Desktop OpenGL and Vulkan SPIR-V validation, autocompletion, AST formatting, and hover documentation."
+    },
+    tr: {
+      subtitle: "Editörler için GLSL Shader Geliştirme Paketi",
+      description: "Modern kod editörleri (Zed ve VS Code) için hepsi bir arada GLSL geliştirme paketi. Masaüstü OpenGL ve Vulkan SPIR-V denetimi, akıllı tamamlama, AST biçimlendirme ve dökümantasyon içeren birleşik Rust LSP motoru."
+    }
+  },
+  {
     id: "samengine",
     title: "SamEngine",
     lang: "C++",
