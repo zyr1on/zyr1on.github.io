@@ -27,6 +27,42 @@
 
 window.PORTFOLIO_PROJECTS = [
   {
+    id: "lightomen",
+    title: "LightOmen",
+    lang: "Rust",
+    category: "systems",
+    tags: ["Rust", "Linux", "Kernel / EC", "Hardware Control", "systemd"],
+    github: "https://github.com/zyr1on/lightomen",
+    demo: "",
+    featured: true,
+    en: {
+      subtitle: "Ultra-Lightweight Hardware Control Center for HP Laptops",
+      description: "Ultra-lightweight Linux hardware daemon and GUI in pure idiomatic Rust (<1 MB RAM, 0% CPU). Features dynamic 7-point fan curves with true 0 RPM silent mode, CPU Turbo Boost management, dynamic NVIDIA TGP power profiles, hardware MUX switch toggling, and physical OMEN hotkey integration."
+    },
+    tr: {
+      subtitle: "Linux için Ultra Hafif HP Donanım Kontrol Merkezi",
+      description: "Linux üzerinde HP OMEN ve Victus dizüstü bilgisayarlar için saf Rust ile geliştirilmiş ultra hafif (<1 MB RAM, %0 CPU) donanım yönetim servisi ve GUI. 7 noktalı dinamik fan eğrileri, gerçek 0 RPM sessiz mod, CPU Turbo Boost yönetimi, dinamik NVIDIA TGP güç profilleri, donanımsal MUX Switch denetimi ve fiziksel OMEN tuşu entegrasyonu sunar."
+    }
+  },
+  {
+    id: "pix2pix-sketch-colorization",
+    title: "pix2pix Sketch Colorization",
+    lang: "Python",
+    category: "ai",
+    tags: ["Python", "PyTorch", "cGAN", "pix2pix", "Gradio", "Computer Vision"],
+    github: "https://github.com/zyr1on/pix2pix-sketch-colorization/tree/main",
+    demo: "",
+    featured: true,
+    en: {
+      subtitle: "Deep Learning Line-Art Colorization with cGAN",
+      description: "Automatic anime sketch colorization pipeline using Conditional GAN (pix2pix) without color hints. Built with an 8-level U-Net generator and 70x70 PatchGAN discriminator trained with cGAN + L1 + VGG-19 perceptual loss on Kaggle GPU. Includes a local Gradio web app with ~8 ms low-latency fp16 inference on RTX 4050."
+    },
+    tr: {
+      subtitle: "cGAN ile Çizim Renklendirme Derin Öğrenme Modeli",
+      description: "Anime çizimlerini renk ipucu gerektirmeden otomatik renklendiren Koşullu GAN (pix2pix) derin öğrenme boru hattı. 8 katmanlı U-Net üreteci ve 70x70 PatchGAN ayrımcısı; cGAN + L1 + VGG-19 algısal kaybı ile Kaggle GPU üzerinde eğitildi. RTX 4050 üzerinde ~8 ms fp16 çıkarım süresi sunan yerel Gradio web arayüzü içerir."
+    }
+  },
+  {
     id: "hlsl-shaderlab-extended",
     title: "HLSL & ShaderLab Extended",
     lang: "Rust",

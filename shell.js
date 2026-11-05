@@ -75,7 +75,7 @@
                   permissions: "-rw-r--r--",
                   owner: "semih",
                   size: "710",
-                  content: "========================================================\nSEMIH ÖZDEMİR — CURRICULUM VITAE SUMMARY\n========================================================\nEducation: Computer Engineering (GPA: 3.48)\nLanguages: C++20, C, Rust, Python, C#, GLSL, HLSL, x86 Assembly\n\nKey Highlights:\n* Built SamEngine: OpenGL 4.6 3D PBR renderer with ImGui\n* Created HLSL & ShaderLab Extended: LSP suite for Zed & VS Code\n* Created GLSL Extended: Unified Rust language server for Desktop OpenGL & Vulkan\n* Malware Analysis: LIEF ELF/PE static analysis framework\n* Certifications: Google Cybersecurity, Cisco Networking Basics\n\nFor full details, visit the #about and #projects tabs."
+                  content: "========================================================\nSEMIH ÖZDEMİR — CURRICULUM VITAE SUMMARY\n========================================================\nEducation: Computer Engineering (GPA: 3.48)\nLanguages: C++20, C, Rust, Python, C#, GLSL, HLSL, x86 Assembly\n\nKey Highlights:\n* Built LightOmen: Ultra-lightweight Rust hardware daemon for HP laptops (<1 MB RAM)\n* Built pix2pix Sketch Colorization: Deep learning cGAN anime colorization pipeline\n* Built SamEngine: OpenGL 4.6 3D PBR renderer with ImGui\n* Created HLSL & ShaderLab Extended: LSP suite for Zed & VS Code\n* Created GLSL Extended: Unified Rust language server for Desktop OpenGL & Vulkan\n* Malware Analysis: LIEF ELF/PE static analysis framework\n* Certifications: Google Cybersecurity, Cisco Networking Basics\n\nFor full details, visit the #about and #projects tabs."
                 },
                 "skills": {
                   type: "dir",
@@ -119,6 +119,20 @@
                   owner: "semih",
                   size: "4096",
                   children: {
+                    "lightomen.txt": {
+                      type: "file",
+                      permissions: "-rw-r--r--",
+                      owner: "semih",
+                      size: "460",
+                      content: "PROJECT: LightOmen\nLANGUAGE: Rust\nCATEGORY: Systems / Hardware Control\nREPO: https://github.com/zyr1on/lightomen\n\nUltra-lightweight Linux hardware control center for HP OMEN & Victus laptops.\nBuilt in pure idiomatic Rust (<1 MB RAM, 0% CPU). Features dynamic fan curves,\ntrue 0 RPM silent mode, CPU Turbo Boost management, power profiles, and MUX switch."
+                    },
+                    "pix2pix.txt": {
+                      type: "file",
+                      permissions: "-rw-r--r--",
+                      owner: "semih",
+                      size: "450",
+                      content: "PROJECT: pix2pix Sketch Colorization\nLANGUAGE: Python / PyTorch\nCATEGORY: Deep Learning & Computer Vision\nREPO: https://github.com/zyr1on/pix2pix-sketch-colorization/tree/main\n\nAutomatic anime line-art sketch colorization using Conditional GAN (pix2pix).\nFeatures 8-level U-Net generator, 70x70 PatchGAN discriminator, VGG-19 perceptual\nloss, and a local Gradio web app with ~8 ms low-latency fp16 inference."
+                    },
                     "hlsl-shaderlab-extended.txt": {
                       type: "file",
                       permissions: "-rw-r--r--",
@@ -654,7 +668,7 @@
   // Open external links or scroll to page sections
   function cmdOpen(args) {
     if (args.length === 0) {
-      printError("open: specify a target (e.g., github, hlsl, glsl, samengine, projects, skills, contact)");
+      printError("open: specify a target (e.g., github, lightomen, pix2pix, hlsl, glsl, samengine, projects, skills, contact)");
       return;
     }
     const target = args[0].toLowerCase();
@@ -663,6 +677,8 @@
       linkedin: "https://linkedin.com/in/semihozdmirr/",
       youtube: "https://youtube.com/@semihozdmirr",
       devto: "https://dev.to/semihozdmirr",
+      lightomen: "https://github.com/zyr1on/lightomen",
+      pix2pix: "https://github.com/zyr1on/pix2pix-sketch-colorization/tree/main",
       hlsl: "https://github.com/zyr1on/hlsl-shaderlab-extended",
       glsl: "https://github.com/zyr1on/glsl-extended",
       samengine: "https://github.com/zyr1on/SamEngine",
@@ -692,7 +708,7 @@
       }
     }
 
-    printError(`open: unknown target '${target}'. Try 'github', 'hlsl', 'glsl', 'samengine', or page sections.`);
+    printError(`open: unknown target '${target}'. Try 'github', 'lightomen', 'pix2pix', 'hlsl', 'glsl', 'samengine', or page sections.`);
   }
 
   // Sudo

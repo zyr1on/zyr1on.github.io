@@ -50,6 +50,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
     // Filters
     filter_all:      "All",
+    filter_systems:  "Systems",
     filter_cpp:      "C / C++",
     filter_python:   "Python",
     filter_security: "Cybersecurity",
@@ -112,6 +113,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
     // Filtreler
     filter_all:      "Tümü",
+    filter_systems:  "Sistem",
     filter_cpp:      "C / C++",
     filter_python:   "Python",
     filter_security: "Siber Güvenlik",
